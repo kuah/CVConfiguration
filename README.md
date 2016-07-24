@@ -2,10 +2,10 @@
 Tool for views settings
 
 传送门~>[CVConfiguration](https://github.com/Chan4iOS/CVConfiguration)
-用`链式写法`来设置各种控件，减少代码的行数，让代码更加清晰，简介
+用`链式写法`来设置各种控件，减少代码的行数，让代码更加清晰，简结
 
 #安装
-直接将项目中的  UIView+ChanViewConfiguration.h 和 UIView+ChanViewConfiguration.h 添加进项目中即可
+直接将项目中的  UIView+ChanViewConfiguration.h 和 UIView+ChanViewConfiguration.m 添加进项目中即可
 ######UIView
 ```objectivec
 self.testView = [[UIView alloc]initWithFrame:(CGRect){50,50,50,50}];
@@ -59,7 +59,7 @@ self.testSearchBar.placeholder = @"fas";
 self.testSearchBar.CVC.searchBarTextFontSize(14).searchBarPlaceholderColor([UIColor blueColor]).searchBarTextColor([UIColor redColor]);
 ```
 
-###### 添加子控件
+###### 批量添加子控件
 ```objectivec
 [self.view cvc_addSubviews:@[self.testSearchBar,self.testButton,self.testView,self.testLabel]];
 ```
