@@ -88,7 +88,7 @@ static const void *ChanViewConfiguration_ButtonBlockKey = &ChanViewConfiguration
 
 -(LabelTextColor)labelTextColor{
     __weak typeof(self) weakSelf = self;
-    NSAssert([self.settingView isKindOfClass:[UILabel class]], @"当前对象使用类:%@ 非UILabel不能使用当前方法:%s ", NSStringFromClass(self.settingView.class),__func__);
+    NSAssert([self.settingView.class isSubclassOfClass:[UILabel class]], @"当前对象使用类:%@ 非UILabel的子类或非本类不能使用此方法:%s ", NSStringFromClass(self.settingView.class),__func__);
     _labelTextColor = ^(UIColor *textColor){
         [(UILabel *)weakSelf.settingView setTextColor:textColor];
         return weakSelf;
@@ -97,7 +97,7 @@ static const void *ChanViewConfiguration_ButtonBlockKey = &ChanViewConfiguration
 }
 -(LabelFontSize)labelFontSize{
     __weak typeof(self) weakSelf = self;
-        NSAssert([self.settingView isKindOfClass:[UILabel class]], @"当前对象使用类:%@ 非UILabel不能使用当前方法:%s ", NSStringFromClass(self.settingView.class),__func__);
+        NSAssert([self.settingView.class isSubclassOfClass:[UILabel class]], @"当前对象使用类:%@ 非UILabel的子类或非本类不能使用此方法:%s ", NSStringFromClass(self.settingView.class),__func__);
     _labelFontSize = ^(CGFloat fontSize){
         ((UILabel *)weakSelf.settingView).font = [UIFont systemFontOfSize:fontSize];
         return weakSelf;
@@ -106,7 +106,7 @@ static const void *ChanViewConfiguration_ButtonBlockKey = &ChanViewConfiguration
 }
 -(LabelNumOfLines)labelNumOfLines{
     __weak typeof(self) weakSelf = self;
-        NSAssert([self.settingView isKindOfClass:[UILabel class]], @"当前对象使用类:%@ 非UILabel不能使用当前方法:%s ", NSStringFromClass(self.settingView.class),__func__);
+        NSAssert([self.settingView.class isSubclassOfClass:[UILabel class]], @"当前对象使用类:%@ 非UILabel的子类或非本类不能使用此方法:%s ", NSStringFromClass(self.settingView.class),__func__);
     _labelNumOfLines = ^(NSInteger row){
         ((UILabel *)weakSelf.settingView).numberOfLines = row;
         return weakSelf;
@@ -115,7 +115,7 @@ static const void *ChanViewConfiguration_ButtonBlockKey = &ChanViewConfiguration
 }
 -(LabelAlignment)labelAlignment{
     __weak typeof(self) weakSelf = self;
-        NSAssert([self.settingView isKindOfClass:[UILabel class]], @"当前对象使用类:%@ 非UILabel不能使用当前方法:%s ", NSStringFromClass(self.settingView.class),__func__);
+        NSAssert([self.settingView.class isSubclassOfClass:[UILabel class]], @"当前对象使用类:%@ 非UILabel的子类或非本类不能使用此方法:%s ", NSStringFromClass(self.settingView.class),__func__);
     _labelAlignment = ^(NSTextAlignment alignment){
         ((UILabel *)weakSelf.settingView).textAlignment = alignment;
         return weakSelf;
@@ -124,7 +124,7 @@ static const void *ChanViewConfiguration_ButtonBlockKey = &ChanViewConfiguration
 }
 -(LabelFont)labelFont{
     __weak typeof(self) weakSelf = self;
-        NSAssert([self.settingView isKindOfClass:[UILabel class]], @"当前对象使用类:%@ 非UILabel不能使用当前方法:%s ", NSStringFromClass(self.settingView.class),__func__);
+        NSAssert([self.settingView.class isSubclassOfClass:[UILabel class]], @"当前对象使用类:%@ 非UILabel的子类或非本类不能使用此方法:%s ", NSStringFromClass(self.settingView.class),__func__);
     _labelFont = ^(UIFont *font){
         ((UILabel *)weakSelf.settingView).font = font;
         return weakSelf;
@@ -145,7 +145,7 @@ static const void *ChanViewConfiguration_ButtonBlockKey = &ChanViewConfiguration
 
 -(ButtonImage)buttonImage{
     __weak typeof(self) weakSelf = self;
-    NSAssert([self.settingView isKindOfClass:[UIButton class]], @"当前对象使用类:%@ 非UIButton不能使用当前方法:%s ", NSStringFromClass(self.settingView.class),__func__);
+    NSAssert([self.settingView.class isSubclassOfClass:[UIButton class]], @"当前对象使用类:%@ 非UIButton的子类或非本类不能使用此方法:%s ", NSStringFromClass(self.settingView.class),__func__);
     _buttonImage = ^(UIImage *image,UIControlState state){
         [(UIButton *)weakSelf.settingView setImage:image forState:state];
         return weakSelf;
@@ -154,7 +154,7 @@ static const void *ChanViewConfiguration_ButtonBlockKey = &ChanViewConfiguration
 }
 -(ButtonTitle)buttonTitle{
     __weak typeof(self) weakSelf = self;
-    NSAssert([self.settingView isKindOfClass:[UIButton class]], @"当前对象使用类:%@ 非UIButton不能使用当前方法:%s ", NSStringFromClass(self.settingView.class),__func__);
+    NSAssert([self.settingView.class isSubclassOfClass:[UIButton class]], @"当前对象使用类:%@ 非UIButton的子类或非本类不能使用此方法:%s ", NSStringFromClass(self.settingView.class),__func__);
     _buttonTitle = ^(NSString *titleStr,UIControlState state){
         [(UIButton *)weakSelf.settingView setTitle:titleStr forState:state];
         ((UIButton *)weakSelf.settingView).titleLabel.text = titleStr;
@@ -165,7 +165,7 @@ static const void *ChanViewConfiguration_ButtonBlockKey = &ChanViewConfiguration
 }
 -(ButtonBackgroundImage)buttonBackgroundImage{
     __weak typeof(self) weakSelf = self;
-    NSAssert([self.settingView isKindOfClass:[UIButton class]], @"当前对象使用类:%@ 非UIButton不能使用当前方法:%s ", NSStringFromClass(self.settingView.class),__func__);
+    NSAssert([self.settingView.class isSubclassOfClass:[UIButton class]], @"当前对象使用类:%@ 非UIButton的子类或非本类不能使用此方法:%s ", NSStringFromClass(self.settingView.class),__func__);
     _buttonBackgroundImage = ^(UIImage *image,UIControlState state){
         [(UIButton *)weakSelf.settingView setBackgroundImage:image forState:state];
         return weakSelf;
@@ -174,7 +174,7 @@ static const void *ChanViewConfiguration_ButtonBlockKey = &ChanViewConfiguration
 }
 -(ButtonTitleColor)buttonTitleColor{
     __weak typeof(self) weakSelf = self;
-    NSAssert([self.settingView isKindOfClass:[UIButton class]], @"当前对象使用类:%@ 非UIButton不能使用当前方法:%s ", NSStringFromClass(self.settingView.class),__func__);
+    NSAssert([self.settingView.class isSubclassOfClass:[UIButton class]], @"当前对象使用类:%@ 非UIButton的子类或非本类不能使用此方法:%s ", NSStringFromClass(self.settingView.class),__func__);
     _buttonTitleColor = ^(UIColor *color ,UIControlState state){
         [(UIButton *)weakSelf.settingView setTitleColor:color forState:state];
         return weakSelf;
@@ -183,7 +183,7 @@ static const void *ChanViewConfiguration_ButtonBlockKey = &ChanViewConfiguration
 }
 -(ButtonTitleFont)buttonTitleFont{
     __weak typeof(self) weakSelf = self;
-    NSAssert([self.settingView isKindOfClass:[UIButton class]], @"当前对象使用类:%@ 非UIButton不能使用当前方法:%s ", NSStringFromClass(self.settingView.class),__func__);
+    NSAssert([self.settingView.class isSubclassOfClass:[UIButton class]], @"当前对象使用类:%@ 非UIButton的子类或非本类不能使用此方法:%s ", NSStringFromClass(self.settingView.class),__func__);
     _buttonTitleFont = ^(UIFont *font){
        ((UIButton *)weakSelf.settingView).titleLabel.font = font;
         return weakSelf;
@@ -192,7 +192,7 @@ static const void *ChanViewConfiguration_ButtonBlockKey = &ChanViewConfiguration
 }
 -(ButtonTitleFontSize)buttonTitleFontSize{
     __weak typeof(self) weakSelf = self;
-    NSAssert([self.settingView isKindOfClass:[UIButton class]], @"当前对象使用类:%@ 非UIButton不能使用当前方法:%s ", NSStringFromClass(self.settingView.class),__func__);
+    NSAssert([self.settingView.class isSubclassOfClass:[UIButton class]], @"当前对象使用类:%@ 非UIButton的子类或非本类不能使用此方法:%s ", NSStringFromClass(self.settingView.class),__func__);
     _buttonTitleFontSize= ^(CGFloat fontSize){
         ((UIButton *)weakSelf.settingView).titleLabel.font = [UIFont systemFontOfSize:fontSize];
         return weakSelf;
@@ -201,7 +201,7 @@ static const void *ChanViewConfiguration_ButtonBlockKey = &ChanViewConfiguration
 }
 -(ButtonTitleTextAlignment)buttonTitleTextAlignment{
     __weak typeof(self) weakSelf = self;
-    NSAssert([self.settingView isKindOfClass:[UIButton class]], @"当前对象使用类:%@ 非UIButton不能使用当前方法:%s ", NSStringFromClass(self.settingView.class),__func__);
+    NSAssert([self.settingView.class isSubclassOfClass:[UIButton class]], @"当前对象使用类:%@ 非UIButton的子类或非本类不能使用此方法:%s ", NSStringFromClass(self.settingView.class),__func__);
     _buttonTitleTextAlignment = ^(NSTextAlignment alignment){
         ((UIButton *)weakSelf.settingView).titleLabel.textAlignment = alignment;
         
@@ -211,7 +211,7 @@ static const void *ChanViewConfiguration_ButtonBlockKey = &ChanViewConfiguration
 }
 -(ButtonLayoutContent)buttonLayoutContent{
     __weak typeof(self) weakSelf = self;
-    NSAssert([self.settingView isKindOfClass:[UIButton class]], @"当前对象使用类:%@ 非UIButton不能使用当前方法:%s ", NSStringFromClass(self.settingView.class),__func__);
+    NSAssert([self.settingView.class isSubclassOfClass:[UIButton class]], @"当前对象使用类:%@ 非UIButton的子类或非本类不能使用此方法:%s ", NSStringFromClass(self.settingView.class),__func__);
     _buttonLayoutContent = ^(ChanButtonEdgeInsetsStyle style,CGFloat space){
         [(UIButton *)weakSelf.settingView layoutButtonWithEdgeInsetsStyle:style imageTitleSpace:space];
         return weakSelf;
@@ -220,7 +220,7 @@ static const void *ChanViewConfiguration_ButtonBlockKey = &ChanViewConfiguration
 }
 -(ButtonResponse)buttonResponse{
     __weak typeof(self) weakSelf = self;
-    NSAssert([self.settingView isKindOfClass:[UIButton class]], @"当前对象使用类:%@ 非UIButton不能使用当前方法:%s ", NSStringFromClass(self.settingView.class),__func__);
+    NSAssert([self.settingView.class isSubclassOfClass:[UIButton class]], @"当前对象使用类:%@ 非UIButton的子类或非本类不能使用此方法:%s ", NSStringFromClass(self.settingView.class),__func__);
     _buttonResponse = ^ (id target,SEL selector,UIControlEvents event){
         [(UIButton *)weakSelf.settingView addTarget:target action:selector forControlEvents:event];
         return weakSelf;
@@ -234,7 +234,7 @@ static const void *ChanViewConfiguration_ButtonBlockKey = &ChanViewConfiguration
 @synthesize searchBarPlaceholderColor = _searchBarPlaceholderColor;
 -(SearchBarTextColor)searchBarTextColor{
     __weak typeof(self) weakSelf = self;
-    NSAssert([self.settingView isKindOfClass:[UISearchBar class]], @"当前对象使用类:%@ 非UISearchBar不能使用当前方法:%s ", NSStringFromClass(self.settingView.class),__func__);
+    NSAssert([self.settingView.class isSubclassOfClass:[UISearchBar class]], @"当前对象使用类:%@ 非UISearchBar的子类或非本类不能使用此方法:%s ", NSStringFromClass(self.settingView.class),__func__);
     _searchBarTextColor = ^ (UIColor *textColor){
         UITextField *textfield = [weakSelf.settingView valueForKey:@"_searchField"];
         //如果textfield为空，则还没有创建原因是text和placeholder都没有被设置
@@ -246,7 +246,7 @@ static const void *ChanViewConfiguration_ButtonBlockKey = &ChanViewConfiguration
 }
 -(SearchBarPlaceholderColor)searchBarPlaceholderColor{
     __weak typeof(self) weakSelf = self;
-    NSAssert([self.settingView isKindOfClass:[UISearchBar class]], @"当前对象使用类:%@ 非UISearchBar不能使用当前方法:%s ", NSStringFromClass(self.settingView.class),__func__);
+    NSAssert([self.settingView.class isSubclassOfClass:[UISearchBar class]], @"当前对象使用类:%@ 非UISearchBar的子类或非本类不能使用此方法:%s ", NSStringFromClass(self.settingView.class),__func__);
     _searchBarPlaceholderColor = ^(UIColor *placeholderColor){
         UITextField *textfield = [weakSelf.settingView valueForKey:@"_searchField"];
         //如果textfield为空，则还没有创建原因是text和placeholder都没有被设置
@@ -258,7 +258,7 @@ static const void *ChanViewConfiguration_ButtonBlockKey = &ChanViewConfiguration
 }
 -(SearchBarTextFont)searchBarTextFont{
     __weak typeof(self) weakSelf = self;
-    NSAssert([self.settingView isKindOfClass:[UISearchBar class]], @"当前对象使用类:%@ 非UISearchBar不能使用当前方法:%s ", NSStringFromClass(self.settingView.class),__func__);
+    NSAssert([self.settingView.class isSubclassOfClass:[UISearchBar class]], @"当前对象使用类:%@ 非UISearchBar的子类或非本类不能使用此方法:%s ", NSStringFromClass(self.settingView.class),__func__);
     _searchBarTextFont = ^(UIFont *textFont){
             UITextField *textfield = [weakSelf.settingView valueForKey:@"_searchField"];
         //如果textfield为空，则还没有创建原因是text和placeholder都没有被设置
@@ -270,7 +270,7 @@ static const void *ChanViewConfiguration_ButtonBlockKey = &ChanViewConfiguration
 }
 -(SearchBarTextFontSize)searchBarTextFontSize{
     __weak typeof(self) weakSelf = self;
-    NSAssert([self.settingView isKindOfClass:[UISearchBar class]], @"当前对象使用类:%@ 非UISearchBar不能使用当前方法:%s ", NSStringFromClass(self.settingView.class),__func__);
+    NSAssert([self.settingView.class isSubclassOfClass:[UISearchBar class]], @"当前对象使用类:%@ 非UISearchBar的子类或非本类不能使用此方法:%s ", NSStringFromClass(self.settingView.class),__func__);
     _searchBarTextFontSize = ^(CGFloat fontSize){
         UITextField *textfield = [weakSelf.settingView valueForKey:@"_searchField"];
         //如果textfield为空，则还没有创建原因是text和placeholder都没有被设置
@@ -285,7 +285,7 @@ static const void *ChanViewConfiguration_ButtonBlockKey = &ChanViewConfiguration
 -(TableViewDefaultSettings)tableViewDefaultSettings
 {
     __weak typeof(self) weakSelf = self;
-    NSAssert([self.settingView isKindOfClass:[UITableView class]], @"当前对象使用类:%@ 非UITableView不能使用当前方法:%s ", NSStringFromClass(self.settingView.class),__func__);
+    NSAssert([self.settingView.class isSubclassOfClass:[UITableView class]], @"当前对象使用类:%@ 非UITableView的子类或非本类不能使用此方法:%s ", NSStringFromClass(self.settingView.class),__func__);
     _tableViewDefaultSettings = ^(){
         [(UITableView *)weakSelf.settingView setUpDefaultSettings];
         return weakSelf;
@@ -305,7 +305,7 @@ static const void *ChanViewConfiguration_ButtonBlockKey = &ChanViewConfiguration
 - (void)cvc_addSubviews:(NSArray *)subviews
 {
     [subviews enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
-        if ([view isKindOfClass:[UIView class]]) {
+        if ([view.class isSubclassOfClass:[UIView class]]) {
             [self addSubview:view];
         }
     }];
@@ -420,7 +420,7 @@ static const void *ChanViewConfiguration_ButtonBlockKey = &ChanViewConfiguration
 -(BOOL)_isAllStringIn:(NSArray*)array{
     if(!array || array.count == 0)return NO;
     for (id object in array) {
-        if(![object isKindOfClass:[NSString class]]){
+        if(![object.class isSubclassOfClass:[NSString class]]){
             return NO;
         }
     }
