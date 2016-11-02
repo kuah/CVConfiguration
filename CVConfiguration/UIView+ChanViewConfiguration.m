@@ -420,7 +420,7 @@ static const void *ChanViewConfiguration_ButtonBlockKey = &ChanViewConfiguration
 -(BOOL)_isAllStringIn:(NSArray*)array{
     if(!array || array.count == 0)return NO;
     for (id object in array) {
-        if(![object.class isSubclassOfClass:[NSString class]]){
+        if(![[object class] isSubclassOfClass:[NSString class]]){
             return NO;
         }
     }
