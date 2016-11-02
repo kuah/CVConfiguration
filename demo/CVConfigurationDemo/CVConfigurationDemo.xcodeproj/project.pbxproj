@@ -14,7 +14,6 @@
 		642DAFC31DC9CB93000346CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 642DAFC21DC9CB93000346CD /* Assets.xcassets */; };
 		642DAFC61DC9CB93000346CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 642DAFC41DC9CB93000346CD /* LaunchScreen.storyboard */; };
 		642DAFD01DC9CBB7000346CD /* UIView+ChanViewConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 642DAFCF1DC9CBB7000346CD /* UIView+ChanViewConfiguration.m */; };
-		642DAFD21DC9D057000346CD /* public_phone_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 642DAFD11DC9D057000346CD /* public_phone_icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +29,6 @@
 		642DAFC71DC9CB93000346CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		642DAFCE1DC9CBB7000346CD /* UIView+ChanViewConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ChanViewConfiguration.h"; sourceTree = "<group>"; };
 		642DAFCF1DC9CBB7000346CD /* UIView+ChanViewConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ChanViewConfiguration.m"; sourceTree = "<group>"; };
-		642DAFD11DC9D057000346CD /* public_phone_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "public_phone_icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +67,6 @@
 				642DAFBD1DC9CB93000346CD /* ViewController.m */,
 				642DAFCD1DC9CBB7000346CD /* CVConfiguration */,
 				642DAFBF1DC9CB93000346CD /* Main.storyboard */,
-				642DAFD11DC9D057000346CD /* public_phone_icon@2x.png */,
 				642DAFC21DC9CB93000346CD /* Assets.xcassets */,
 				642DAFC41DC9CB93000346CD /* LaunchScreen.storyboard */,
 				642DAFC71DC9CB93000346CD /* Info.plist */,
@@ -155,7 +152,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				642DAFC61DC9CB93000346CD /* LaunchScreen.storyboard in Resources */,
-				642DAFD21DC9D057000346CD /* public_phone_icon@2x.png in Resources */,
 				642DAFC31DC9CB93000346CD /* Assets.xcassets in Resources */,
 				642DAFC11DC9CB93000346CD /* Main.storyboard in Resources */,
 			);
