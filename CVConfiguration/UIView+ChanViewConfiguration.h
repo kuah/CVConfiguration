@@ -60,8 +60,7 @@ typedef CVSUniversalModel * (^TableViewDefaultSettings) ();
  */
 @property (nonatomic,copy,readonly)ViewCornerRadius viewCornerRadius;
 /**
- *  根据宽度比例 调节圆角
- * @param  (CGFloat ratio)
+ *  根据宽度比例 调节圆角 param : (CGFloat ratio)
  */
 @property (nonatomic,copy,readonly)ViewCornerRatioToWidth viewCornerRatioToWidth;
 /**
@@ -188,7 +187,7 @@ typedef CVSUniversalModel * (^TableViewDefaultSettings) ();
  *  @param subviews   子控件
  */
 - (void)cvc_addSubviews:(NSArray *)subviews;
--(CVSUniversalModel *)CVC;
+-(CVSUniversalModel *)cvc;
 @end
 
 typedef void (^ChanViewConfiguration_ButtonActionBlock)(NSInteger tag);
@@ -197,8 +196,7 @@ typedef void (^ChanViewConfiguration_ButtonActionBlock)(NSInteger tag);
  * @brief 按钮内容自动排列
  * @param style 看上面的enum枚举
  * @param space 文字跟图片的间距
- *
- * @return nil
+
  */
 -(void)layoutButtonWithEdgeInsetsStyle:(ChanButtonEdgeInsetsStyle)style
                        imageTitleSpace:(CGFloat)space;

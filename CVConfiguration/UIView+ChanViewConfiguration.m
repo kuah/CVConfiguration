@@ -296,7 +296,7 @@ static const void *ChanViewConfiguration_ButtonBlockKey = &ChanViewConfiguration
 @end
 
 @implementation UIView (ChanViewConfiguration)
--(CVSUniversalModel *)CVC{
+-(CVSUniversalModel *)cvc{
     CVSUniversalModel *center = [[CVSUniversalModel alloc] init];
     NSAssert(self != nil, @"view 不能为空 %@",self);
     center.settingView = self;

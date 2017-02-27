@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "CVConfiguration"
-  s.version      = "1.0"
+  s.version      = "1.1"
   s.summary      = "OC控件代码的链式写法"
 
   # This description is used to generate tags and improve search results.
@@ -63,7 +63,7 @@ Pod::Spec.new do |s|
   #
 
   # s.platform     = :ios
-  # s.platform     = :ios, "6.0"
+  s.platform     = :ios, "6.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
