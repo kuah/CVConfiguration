@@ -156,8 +156,8 @@ static const void *ChanViewConfiguration_ButtonBlockKey = &ChanViewConfiguration
     __weak typeof(self) weakSelf = self;
     NSAssert([self.settingView.class isSubclassOfClass:[UIButton class]], @"当前对象使用类:%@ 非UIButton的子类或非本类不能使用此方法:%s ", NSStringFromClass(self.settingView.class),__func__);
     _buttonTitle = ^(NSString *titleStr,UIControlState state){
-        [(UIButton *)weakSelf.settingView setTitle:titleStr forState:state];
         ((UIButton *)weakSelf.settingView).titleLabel.text = titleStr;
+        [(UIButton *)weakSelf.settingView setTitle:titleStr forState:state];
         ((UIButton *)weakSelf.settingView).titleLabel.numberOfLines = 0;
         return weakSelf;
     };

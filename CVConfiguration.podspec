@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "CVConfiguration"
-  s.version      = "1.1"
+  s.version      = "1.2"
   s.summary      = "OC控件代码的链式写法"
 
   # This description is used to generate tags and improve search results.
