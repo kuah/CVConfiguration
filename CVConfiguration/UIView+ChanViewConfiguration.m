@@ -11,6 +11,59 @@
 static const void *ChanViewConfiguration_ButtonBlockKey = &ChanViewConfiguration_ButtonBlockKey;
 @implementation CVSUniversalModel
 
+#pragma mark ___________________Common________________________
+@synthesize fontAuto = _fontAuto;
+@synthesize fontMinimumScale = _fontMinimumScale;
+-(FontAuto)fontAuto{
+    __weak typeof(self) weakSelf = self;
+    NSAssert([self.settingView.class isSubclassOfClass:[UILabel class]] || [self.settingView.class isSubclassOfClass:[UIButton class]]||[self.settingView.class isSubclassOfClass:[UITextField class]]||[self.settingView.class isSubclassOfClass:[UISearchBar class]], @"当前对象使用类:%@ 非 UILabel 或 UIButton 或 UITextField 或 UISearchBar 的子类或非本类不能使用此方法:%s ", NSStringFromClass(self.settingView.class),__func__);
+    _fontAuto = ^(){
+        CGFloat minimumScaleFactor = 0.1;
+        if ([weakSelf.settingView.class isSubclassOfClass:[UILabel class]]) {
+            ((UILabel *)weakSelf.settingView).minimumScaleFactor =0.7;
+            ((UILabel *)weakSelf.settingView).adjustsFontSizeToFitWidth =YES;
+        }else if([weakSelf.settingView.class isSubclassOfClass:[UIButton class]]){
+            ((UIButton *)weakSelf.settingView).titleLabel.minimumScaleFactor =0.7;
+            ((UIButton *)weakSelf.settingView).titleLabel.adjustsFontSizeToFitWidth =YES;
+        }else if([weakSelf.settingView.class isSubclassOfClass:[UITextField class]]){
+            ((UITextField *)weakSelf.settingView).adjustsFontSizeToFitWidth =YES;
+            ((UITextField *)weakSelf.settingView).minimumFontSize =((UITextField *)weakSelf.settingView).font.pointSize*minimumScaleFactor;
+            NSLog(@"%f",((UITextField *)weakSelf.settingView).minimumFontSize);
+            
+        }else if([weakSelf.settingView.class isSubclassOfClass:[UISearchBar class]]){
+            UITextField *textfield = [weakSelf.settingView valueForKey:@"_searchField"];
+            textfield.minimumFontSize =textfield.font.pointSize*minimumScaleFactor;
+            textfield.adjustsFontSizeToFitWidth =YES;
+        }
+        
+        return weakSelf;
+    };
+    return _fontAuto;
+}
+-(FontMinimumScale)fontMinimumScale{
+    __weak typeof(self) weakSelf = self;
+    NSAssert([self.settingView.class isSubclassOfClass:[UILabel class]] || [self.settingView.class isSubclassOfClass:[UIButton class]]||[self.settingView.class isSubclassOfClass:[UITextField class]]||[self.settingView.class isSubclassOfClass:[UISearchBar class]], @"当前对象使用类:%@ 非UILabel 或 UIButton 或 UITextField 或 UISearchBar 的子类或非本类不能使用此方法:%s ", NSStringFromClass(self.settingView.class),__func__);
+    _fontMinimumScale = ^(CGFloat minimumScaleFactor){
+        if ([weakSelf.settingView.class isSubclassOfClass:[UILabel class]]) {
+            ((UILabel *)weakSelf.settingView).minimumScaleFactor =0.7;
+            ((UILabel *)weakSelf.settingView).adjustsFontSizeToFitWidth =YES;
+        }else if([weakSelf.settingView.class isSubclassOfClass:[UIButton class]]){
+            ((UIButton *)weakSelf.settingView).titleLabel.minimumScaleFactor =0.7;
+            ((UIButton *)weakSelf.settingView).titleLabel.adjustsFontSizeToFitWidth =YES;
+        }else if([weakSelf.settingView.class isSubclassOfClass:[UITextField class]]){
+            ((UITextField *)weakSelf.settingView).minimumFontSize =((UITextField *)weakSelf.settingView).font.pointSize*minimumScaleFactor;
+            ((UITextField *)weakSelf.settingView).adjustsFontSizeToFitWidth =YES;
+        }else if([weakSelf.settingView.class isSubclassOfClass:[UISearchBar class]]){
+            UITextField *textfield = [weakSelf.settingView valueForKey:@"_searchField"];
+            textfield.minimumFontSize =textfield.font.pointSize*minimumScaleFactor;
+            textfield.adjustsFontSizeToFitWidth =YES;
+        }
+        return weakSelf;
+    };
+    return _fontMinimumScale;
+}
+
+#pragma mark ___________________UIView________________________
 @synthesize viewBorder = _viewBorder;
 @synthesize viewBorderColor = _viewBorderColor;
 @synthesize viewBorderWidth = _viewBorderWidth;

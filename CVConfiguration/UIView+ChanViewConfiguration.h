@@ -16,6 +16,9 @@ typedef NS_ENUM(NSUInteger, ChanButtonEdgeInsetsStyle) {
     ChanButtonEdgeInsetsStyleRight // image在右，label在左
 };
 @class CVSUniversalModel;
+#pragma mark __________________common_set_____________________
+typedef  CVSUniversalModel* (^FontAuto) ();
+typedef  CVSUniversalModel* (^FontMinimumScale) (CGFloat minimumScaleFactor);
 #pragma mark __________________view_set_____________________
 typedef  CVSUniversalModel* (^ViewCornerRadius) (CGFloat radius);
 ///the ratio must define between 0~1
@@ -32,6 +35,7 @@ typedef  CVSUniversalModel* (^LabelTextColor) (UIColor *textColor);
 typedef  CVSUniversalModel* (^LabelNumOfLines) (NSInteger row);
 typedef  CVSUniversalModel* (^LabelFont) (UIFont *font);
 typedef  CVSUniversalModel* (^LabelFontSize) (CGFloat fontSize);
+
 
 #pragma mark __________________button_set____________________
 typedef  CVSUniversalModel* (^ButtonImage) (UIImage *image,UIControlState state);
@@ -54,6 +58,16 @@ typedef CVSUniversalModel * (^SearchBarTextFontSize) (CGFloat fontSize);
 typedef CVSUniversalModel * (^TableViewDefaultSettings) ();
 
 @interface CVSUniversalModel : NSObject
+#pragma mark ________________Common______________________
+/**
+ *   字体大小自动调节(仅单行有效)  param : ()
+ */
+@property (nonatomic,copy,readonly)FontAuto fontAuto;
+/**
+ *   字体大小自动调节(仅单行有效) 设置最小字体比例  param : (CGFloat minimumScaleFactor)
+ */
+@property (nonatomic,copy,readonly)FontMinimumScale fontMinimumScale;
+
 #pragma mark ________________UIView______________________
 /**
  * 圆角  最好少用，影响内存  param : (CGFloat radius)
@@ -107,6 +121,7 @@ typedef CVSUniversalModel * (^TableViewDefaultSettings) ();
  *   字体大小  param : (CGFloat fontSize)
  */
 @property (nonatomic,copy,readonly)LabelFontSize labelFontSize;
+
 
 #pragma mark ________________UIButton______________________
 /**

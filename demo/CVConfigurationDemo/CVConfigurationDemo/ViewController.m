@@ -29,6 +29,10 @@
  *   <#decr#>
  */
 @property (nonatomic,strong)UISearchBar *testSearchBar;
+/**
+ *   <#decr#>
+ */
+@property (nonatomic,strong)UITextField *textField;
 
 @end
 
@@ -80,10 +84,15 @@
     self.testSearchBar = [[UISearchBar alloc]initWithFrame:(CGRect){10,300,200,40}];
     self.testSearchBar.placeholder = @"fas";
     
-    self.testSearchBar.cvc.searchBarTextFontSize(14).searchBarPlaceholderColor([UIColor blueColor]).searchBarTextColor([UIColor redColor]);
+    self.testSearchBar.cvc.searchBarTextFontSize(14).searchBarPlaceholderColor([UIColor blueColor]).searchBarTextColor([UIColor redColor]).fontAuto();
     
-    [self.view cvc_addSubviews:@[self.testSearchBar,self.testButton,self.testView,self.testLabel]];
+    self.textField = [[UITextField alloc]initWithFrame:(CGRect){10,500,200,40}];
+    self.textField.placeholder = @"sss";
     
+    self.textField.font = [UIFont systemFontOfSize:22];
+    self.textField.cvc.fontAuto();
+    
+    [self.view cvc_addSubviews:@[self.testSearchBar,self.testButton,self.testView,self.testLabel,self.textField]];
 }
 -(void)click:(id)sender{
     NSLog(@"click");
