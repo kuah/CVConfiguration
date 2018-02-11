@@ -7,16 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BB1567320303ED9007CBF61 /* UIView+ChanViewConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB1567220303ED9007CBF61 /* UIView+ChanViewConfiguration.m */; };
 		642DAFB81DC9CB93000346CD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 642DAFB71DC9CB93000346CD /* main.m */; };
 		642DAFBB1DC9CB93000346CD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 642DAFBA1DC9CB93000346CD /* AppDelegate.m */; };
 		642DAFBE1DC9CB93000346CD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 642DAFBD1DC9CB93000346CD /* ViewController.m */; };
 		642DAFC11DC9CB93000346CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 642DAFBF1DC9CB93000346CD /* Main.storyboard */; };
 		642DAFC31DC9CB93000346CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 642DAFC21DC9CB93000346CD /* Assets.xcassets */; };
 		642DAFC61DC9CB93000346CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 642DAFC41DC9CB93000346CD /* LaunchScreen.storyboard */; };
-		642DAFD01DC9CBB7000346CD /* UIView+ChanViewConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 642DAFCF1DC9CBB7000346CD /* UIView+ChanViewConfiguration.m */; };
+		A28FF6D629425C440841C82F /* libPods-CVConfigurationDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E76DBE3000961BC049FD4C4E /* libPods-CVConfigurationDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BB1567120303ED9007CBF61 /* UIView+ChanViewConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ChanViewConfiguration.h"; sourceTree = "<group>"; };
+		0BB1567220303ED9007CBF61 /* UIView+ChanViewConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ChanViewConfiguration.m"; sourceTree = "<group>"; };
 		642DAFB31DC9CB93000346CD /* CVConfigurationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CVConfigurationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		642DAFB71DC9CB93000346CD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		642DAFB91DC9CB93000346CD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -27,8 +30,9 @@
 		642DAFC21DC9CB93000346CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		642DAFC51DC9CB93000346CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		642DAFC71DC9CB93000346CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		642DAFCE1DC9CBB7000346CD /* UIView+ChanViewConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ChanViewConfiguration.h"; sourceTree = "<group>"; };
-		642DAFCF1DC9CBB7000346CD /* UIView+ChanViewConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ChanViewConfiguration.m"; sourceTree = "<group>"; };
+		82677B9DE5CE03E92DEA2C8D /* Pods-CVConfigurationDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CVConfigurationDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CVConfigurationDemo/Pods-CVConfigurationDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		E76DBE3000961BC049FD4C4E /* libPods-CVConfigurationDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CVConfigurationDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F687F7DA3BD7B7A8BA740444 /* Pods-CVConfigurationDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CVConfigurationDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CVConfigurationDemo/Pods-CVConfigurationDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,17 +40,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A28FF6D629425C440841C82F /* libPods-CVConfigurationDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BB1567020303ED9007CBF61 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				0BB1567120303ED9007CBF61 /* UIView+ChanViewConfiguration.h */,
+				0BB1567220303ED9007CBF61 /* UIView+ChanViewConfiguration.m */,
+			);
+			name = source;
+			path = ../../../source;
+			sourceTree = "<group>";
+		};
 		642DAFAA1DC9CB93000346CD = {
 			isa = PBXGroup;
 			children = (
 				642DAFB51DC9CB93000346CD /* CVConfigurationDemo */,
 				642DAFB41DC9CB93000346CD /* Products */,
+				875841E9FFB1AC5B7B791A9F /* Pods */,
+				7610E17946E408DC72AB160F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,11 +78,11 @@
 		642DAFB51DC9CB93000346CD /* CVConfigurationDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0BB1567020303ED9007CBF61 /* source */,
 				642DAFB91DC9CB93000346CD /* AppDelegate.h */,
 				642DAFBA1DC9CB93000346CD /* AppDelegate.m */,
 				642DAFBC1DC9CB93000346CD /* ViewController.h */,
 				642DAFBD1DC9CB93000346CD /* ViewController.m */,
-				642DAFCD1DC9CBB7000346CD /* CVConfiguration */,
 				642DAFBF1DC9CB93000346CD /* Main.storyboard */,
 				642DAFC21DC9CB93000346CD /* Assets.xcassets */,
 				642DAFC41DC9CB93000346CD /* LaunchScreen.storyboard */,
@@ -83,14 +100,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		642DAFCD1DC9CBB7000346CD /* CVConfiguration */ = {
+		7610E17946E408DC72AB160F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				642DAFCE1DC9CBB7000346CD /* UIView+ChanViewConfiguration.h */,
-				642DAFCF1DC9CBB7000346CD /* UIView+ChanViewConfiguration.m */,
+				E76DBE3000961BC049FD4C4E /* libPods-CVConfigurationDemo.a */,
 			);
-			name = CVConfiguration;
-			path = ../../../CVConfiguration;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		875841E9FFB1AC5B7B791A9F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				82677B9DE5CE03E92DEA2C8D /* Pods-CVConfigurationDemo.debug.xcconfig */,
+				F687F7DA3BD7B7A8BA740444 /* Pods-CVConfigurationDemo.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -100,9 +124,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 642DAFCA1DC9CB93000346CD /* Build configuration list for PBXNativeTarget "CVConfigurationDemo" */;
 			buildPhases = (
+				A7FDCA80E4E60CBAF40074D5 /* [CP] Check Pods Manifest.lock */,
 				642DAFAF1DC9CB93000346CD /* Sources */,
 				642DAFB01DC9CB93000346CD /* Frameworks */,
 				642DAFB11DC9CB93000346CD /* Resources */,
+				81E2158F959AB9220022D87B /* [CP] Embed Pods Frameworks */,
+				6315893615383727F4B3A3BC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -159,6 +186,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6315893615383727F4B3A3BC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CVConfigurationDemo/Pods-CVConfigurationDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81E2158F959AB9220022D87B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CVConfigurationDemo/Pods-CVConfigurationDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7FDCA80E4E60CBAF40074D5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CVConfigurationDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		642DAFAF1DC9CB93000346CD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -166,7 +244,7 @@
 			files = (
 				642DAFBE1DC9CB93000346CD /* ViewController.m in Sources */,
 				642DAFBB1DC9CB93000346CD /* AppDelegate.m in Sources */,
-				642DAFD01DC9CBB7000346CD /* UIView+ChanViewConfiguration.m in Sources */,
+				0BB1567320303ED9007CBF61 /* UIView+ChanViewConfiguration.m in Sources */,
 				642DAFB81DC9CB93000346CD /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +361,7 @@
 		};
 		642DAFCB1DC9CB93000346CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82677B9DE5CE03E92DEA2C8D /* Pods-CVConfigurationDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CVConfigurationDemo/Info.plist;
@@ -294,6 +373,7 @@
 		};
 		642DAFCC1DC9CB93000346CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F687F7DA3BD7B7A8BA740444 /* Pods-CVConfigurationDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CVConfigurationDemo/Info.plist;

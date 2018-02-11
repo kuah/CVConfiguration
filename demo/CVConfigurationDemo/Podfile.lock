@@ -1,0 +1,12 @@
+PODS:
+  - UITextView-Kuah (0.1)
+
+DEPENDENCIES:
+  - UITextView-Kuah
+
+SPEC CHECKSUMS:
+  UITextView-Kuah: 8d500a08ca0e925d3c7c7acf5cb6051ca442d44f
+
+PODFILE CHECKSUM: b4838293ef3ed18591533d8c0df8c6b95222fdd6
+
+COCOAPODS: 1.3.0.beta.2

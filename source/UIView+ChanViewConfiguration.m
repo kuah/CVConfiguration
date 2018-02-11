@@ -7,10 +7,16 @@
 //
 
 #import "UIView+ChanViewConfiguration.h"
+#import <UITextView-Kuah/UITextView+Placeholder.h>
 #import <objc/runtime.h>
 static const void *ChanViewConfiguration_ButtonBlockKey = &ChanViewConfiguration_ButtonBlockKey;
 @implementation CVSUniversalModel
-
+#pragma mark ___________________Base________________________
+@synthesize settingView = _settingView;
+@synthesize org = _org;
+-(id)org{
+    return self.settingView;
+}
 #pragma mark ___________________Common________________________
 @synthesize fontAuto = _fontAuto;
 @synthesize fontMinimumScale = _fontMinimumScale;
@@ -71,7 +77,7 @@ static const void *ChanViewConfiguration_ButtonBlockKey = &ChanViewConfiguration
 @synthesize viewCornerRadius = _viewCornerRadius;
 @synthesize viewCornerRatioToWidth = _viewCornerRatioToWidth;
 @synthesize viewCornerRatioToHeight = _viewCornerRatioToHeight;
-@synthesize settingView = _settingView;
+
 -(ViewCornerRatioToHeight)viewCornerRatioToHeight{
     __weak typeof(self) weakSelf = self;
     _viewCornerRatioToHeight = ^(CGFloat ratio){
@@ -285,6 +291,8 @@ static const void *ChanViewConfiguration_ButtonBlockKey = &ChanViewConfiguration
 @synthesize searchBarTextColor = _searchBarTextColor;
 @synthesize searchBarTextFontSize = _searchBarTextFontSize;
 @synthesize searchBarPlaceholderColor = _searchBarPlaceholderColor;
+@synthesize searchBarTextFieldBackgroundColor = _searchBarTextFieldBackgroundColor;
+
 -(SearchBarTextColor)searchBarTextColor{
     __weak typeof(self) weakSelf = self;
     NSAssert([self.settingView.class isSubclassOfClass:[UISearchBar class]], @"当前对象使用类:%@ 非UISearchBar的子类或非本类不能使用此方法:%s ", NSStringFromClass(self.settingView.class),__func__);
@@ -333,6 +341,18 @@ static const void *ChanViewConfiguration_ButtonBlockKey = &ChanViewConfiguration
     };
     return _searchBarTextFontSize;
 }
+-(SearchBarTextFieldBackgroundColor)searchBarTextFieldBackgroundColor{
+    __weak typeof(self) weakSelf = self;
+    NSAssert([self.settingView.class isSubclassOfClass:[UISearchBar class]], @"当前对象使用类:%@ 非UISearchBar的子类或非本类不能使用此方法:%s ", NSStringFromClass(self.settingView.class),__func__);
+    _searchBarTextFieldBackgroundColor = ^(UIColor *backgroundColor){
+        UITextField *textfield = [weakSelf.settingView valueForKey:@"_searchField"];
+        //如果textfield为空，则还没有创建原因是text和placeholder都没有被设置
+        if(!textfield)((UITextField *)weakSelf.settingView).placeholder = @"";
+        textfield.backgroundColor =backgroundColor;
+        return weakSelf;
+    };
+    return _searchBarTextFieldBackgroundColor;
+}
 #pragma mark ___________________UITableView________________________
 @synthesize tableViewDefaultSettings = _tableViewDefaultSettings;
 -(TableViewDefaultSettings)tableViewDefaultSettings
@@ -345,6 +365,28 @@ static const void *ChanViewConfiguration_ButtonBlockKey = &ChanViewConfiguration
     };
     return _tableViewDefaultSettings;
 }
+#pragma mark ___________________UITextView________________________
+@synthesize textViewPlaceholder = _textViewPlaceholder;
+@synthesize textViewPlaceholderColor = _textViewPlaceholderColor;
+-(TextViewPlaceholder)textViewPlaceholder{
+    __weak typeof(self) weakSelf = self;
+    NSAssert([self.settingView.class isSubclassOfClass:[UITextView class]], @"当前对象使用类:%@ 非UITextView的子类或非本类不能使用此方法:%s ", NSStringFromClass(self.settingView.class),__func__);
+    _textViewPlaceholder = ^(NSString *placeholder){
+        ((UITextView *)weakSelf.settingView).placeholder = placeholder;
+        return weakSelf;
+    };
+    return _textViewPlaceholder;
+}
+-(TextViewPlaceholderColor)textViewPlaceholderColor{
+    __weak typeof(self) weakSelf = self;
+    NSAssert([self.settingView.class isSubclassOfClass:[UITextView class]], @"当前对象使用类:%@ 非UITextView的子类或非本类不能使用此方法:%s ", NSStringFromClass(self.settingView.class),__func__);
+    _textViewPlaceholderColor = ^(UIColor *placeholderColor){
+        ((UITextView *)weakSelf.settingView).placeholderColor = placeholderColor;
+        return weakSelf;
+    };
+    return _textViewPlaceholderColor;
+}
+
 
 @end
 

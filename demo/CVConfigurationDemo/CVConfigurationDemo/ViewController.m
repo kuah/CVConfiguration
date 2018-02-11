@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "UIView+ChanViewConfiguration.h"
-@interface ViewController ()
+@interface ViewController ()<UITextViewDelegate>
 /**
  *   <#decr#>
  */
@@ -33,6 +33,10 @@
  *   <#decr#>
  */
 @property (nonatomic,strong)UITextField *textField;
+/**
+ *   <#decr#>
+ */
+@property (nonatomic,strong)UITextView *textView;
 
 @end
 
@@ -86,16 +90,28 @@
     
     self.testSearchBar.cvc.searchBarTextFontSize(14).searchBarPlaceholderColor([UIColor blueColor]).searchBarTextColor([UIColor redColor]).fontAuto();
     
-    self.textField = [[UITextField alloc]initWithFrame:(CGRect){10,500,200,40}];
+    self.textField = [[UITextField alloc]initWithFrame:(CGRect){200,100,100,40}];
     self.textField.placeholder = @"sss";
     
     self.textField.font = [UIFont systemFontOfSize:22];
     self.textField.cvc.fontAuto();
     
-    [self.view cvc_addSubviews:@[self.testSearchBar,self.testButton,self.testView,self.testLabel,self.textField]];
+    self.textView = [UITextView new].cvc.textViewPlaceholder(@"1111").textViewPlaceholderColor([UIColor redColor]).viewBackGroundColor([UIColor colorWithWhite:0.8 alpha:0.5]).org;
+    self.textView.delegate = self;
+    self.textView.frame = (CGRect){10,350,[UIScreen mainScreen].bounds.size.width,200};
+    
+    [self.view cvc_addSubviews:@[self.testSearchBar,self.testButton,self.testView,self.testLabel,self.textField,self.textView]];
+    
+    [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)]];
 }
 -(void)click:(id)sender{
     NSLog(@"click");
+}
+-(void)tap:(id)sender{
+    [self.view endEditing:YES];
+}
+-(void)textViewDidChange:(UITextView *)textView{
+    NSLog(@"textView:----->  %@",textView.text);
 }
 
 - (void)didReceiveMemoryWarning {

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 #pragma mark __________________button_Enum_____________________
 typedef NS_ENUM(NSUInteger, ChanButtonEdgeInsetsStyle) {
     ChanButtonEdgeInsetsStyleTop, // image在上，label在下
@@ -51,11 +52,16 @@ typedef  CVSUniversalModel* (^ButtonResponse) (id target,SEL selector,UIControlE
 typedef  CVSUniversalModel * (^ButtonResponseBlock)(NSInteger tag);
 #pragma mark __________________searchbar_set____________________
 typedef CVSUniversalModel * (^SearchBarPlaceholderColor) (UIColor *placeholderColor);
+typedef CVSUniversalModel * (^SearchBarTextFieldBackgroundColor) (UIColor *backgroundColor);
 typedef CVSUniversalModel * (^SearchBarTextColor) (UIColor *textColor);
 typedef CVSUniversalModel * (^SearchBarTextFont) (UIFont *font);
 typedef CVSUniversalModel * (^SearchBarTextFontSize) (CGFloat fontSize);
 #pragma mark __________________tableView_set____________________
 typedef CVSUniversalModel * (^TableViewDefaultSettings) ();
+#pragma mark __________________textView_set____________________
+typedef CVSUniversalModel * (^TextViewPlaceholder) (NSString *placeholder);
+typedef CVSUniversalModel * (^TextViewPlaceholderColor) (UIColor *placeholderColor);
+
 
 @interface CVSUniversalModel : NSObject
 #pragma mark ________________Common______________________
@@ -172,6 +178,10 @@ typedef CVSUniversalModel * (^TableViewDefaultSettings) ();
  */
 @property (nonatomic,copy,readonly)SearchBarTextColor searchBarTextColor;
 /**
+ *   设置field的背景颜色 parm:(UIColor *backgroundColor)
+ */
+@property (nonatomic,copy,readonly)SearchBarTextFieldBackgroundColor searchBarTextFieldBackgroundColor;
+/**
  *   设置text字体,placeholder会跟着改变 parm:(UIFont *font)
  */
 @property (nonatomic,copy,readonly)SearchBarTextFont searchBarTextFont;
@@ -180,12 +190,22 @@ typedef CVSUniversalModel * (^TableViewDefaultSettings) ();
  */
 @property (nonatomic,copy,readonly)SearchBarTextFontSize searchBarTextFontSize;
 
+
 #pragma mark ________________UITableView______________________
 /**
  *   对tableView做一些默认的操作，比如去掉footer，默认的分割线等 会调用-(void)setUpDefaultSettings方法
  */
 @property (nonatomic,copy,readonly)TableViewDefaultSettings tableViewDefaultSettings;
 
+#pragma mark ________________TextView______________________
+/**
+ *   设置textView的Placeholder
+ */
+@property (nonatomic,strong)TextViewPlaceholder textViewPlaceholder;
+/**
+ *   设置textView的Placeholder
+ */
+@property (nonatomic,strong)TextViewPlaceholderColor textViewPlaceholderColor;
 
 
 #pragma mark ________________setting_View_Target______________________
@@ -193,6 +213,11 @@ typedef CVSUniversalModel * (^TableViewDefaultSettings) ();
  *  绑定的view
  */
 @property (nonatomic,weak)UIView *settingView;
+
+/**
+ *   语法糖
+ */
+@property (nonatomic,weak,readonly)id org;
 
 @end
 @interface UIView (ChanViewConfiguration)
