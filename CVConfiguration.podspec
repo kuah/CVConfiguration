@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'CVConfiguration'
-  s.version      = '1.5.0'
+  s.version      = '1.6.0'
   s.summary      = 'UIkit的语法糖,链式写法'
   s.homepage     = 'https://github.com/kuah/CVConfiguration'
   s.author       = "CT4 => 284766710@qq.com"

@@ -7,7 +7,11 @@
 //
 
 #import "UIView+ChanViewConfiguration.h"
+#if __has_include(<UITextView-Kuah/UITextView+Placeholder.h>)
 #import <UITextView-Kuah/UITextView+Placeholder.h>
+#else
+#import "UITextView+Placeholder.h"
+#endif
 #import <objc/runtime.h>
 static const void *ChanViewConfiguration_ButtonBlockKey = &ChanViewConfiguration_ButtonBlockKey;
 @implementation CVSUniversalModel
