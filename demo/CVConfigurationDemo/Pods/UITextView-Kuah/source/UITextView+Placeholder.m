@@ -7,9 +7,20 @@
 //
 
 #import "UITextView+Placeholder.h"
-#import "NSObject+Kuah.h"
-#import <objc/runtime.h>
 #import "KTextViewDelegateTransition.h"
+#import <objc/runtime.h>
+@implementation NSObject (Kuah)
++ (void)k_exchangeInstanceMethod1:(SEL)method1 method2:(SEL)method2
+{
+    method_exchangeImplementations(class_getInstanceMethod(self, method1), class_getInstanceMethod(self, method2));
+}
+
++ (void)k_exchangeClassMethod1:(SEL)method1 method2:(SEL)method2
+{
+    method_exchangeImplementations(class_getClassMethod(self, method1), class_getClassMethod(self, method2));
+}
+
+@end
 @implementation UITextView (Kuah)
 #pragma mark -private
 -(UITextView *)placeholderTextView{
@@ -69,11 +80,11 @@
 
 #pragma mark -else
 +(void)load{
-    [self exchangeInstanceMethod1:@selector(setDelegate:) method2:@selector(k_setDelegate:)];
-    [self exchangeInstanceMethod1:@selector(setFrame:) method2:@selector(k_setFrame:)];
-    [self exchangeInstanceMethod1:@selector(setTextContainerInset:) method2:@selector(k_setTextContainerInset:)];
-    [self exchangeInstanceMethod1:@selector(setTextAlignment:) method2:@selector(k_setTextAlignment:)];
-    [self exchangeInstanceMethod1:@selector(setFont:) method2:@selector(k_setFont:)];
+    [self k_exchangeInstanceMethod1:@selector(setDelegate:) method2:@selector(k_setDelegate:)];
+    [self k_exchangeInstanceMethod1:@selector(setFrame:) method2:@selector(k_setFrame:)];
+    [self k_exchangeInstanceMethod1:@selector(setTextContainerInset:) method2:@selector(k_setTextContainerInset:)];
+    [self k_exchangeInstanceMethod1:@selector(setTextAlignment:) method2:@selector(k_setTextAlignment:)];
+    [self k_exchangeInstanceMethod1:@selector(setFont:) method2:@selector(k_setFont:)];
 }
 -(void)k_setDelegate:(id<UITextViewDelegate>)delegate{
    
@@ -86,6 +97,10 @@
     }else{
         [self k_setDelegate:delegate];
     }
+}
+-(void)layoutSubviews{
+    [super layoutSubviews];
+    [self placeholderTextView].frame = self.bounds;
 }
 -(void)k_setFrame:(CGRect)frame{
     [self k_setFrame:frame];

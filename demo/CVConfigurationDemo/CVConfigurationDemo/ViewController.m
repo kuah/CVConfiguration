@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "UIView+ChanViewConfiguration.h"
+#import <Masonry.h>
 @interface ViewController ()<UITextViewDelegate>
 /**
  *   <#decr#>
@@ -98,9 +99,14 @@
     
     self.textView = [UITextView new].cvc.textViewPlaceholder(@"1111").textViewPlaceholderColor([UIColor redColor]).viewBackGroundColor([UIColor colorWithWhite:0.8 alpha:0.5]).org;
     self.textView.delegate = self;
-    self.textView.frame = (CGRect){10,350,[UIScreen mainScreen].bounds.size.width,200};
+//    self.textView.frame = (CGRect){10,350,[UIScreen mainScreen].bounds.size.width,200};
+    
     
     [self.view cvc_addSubviews:@[self.testSearchBar,self.testButton,self.testView,self.testLabel,self.textField,self.textView]];
+    [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.top.mas_equalTo(self.view).mas_offset(20);
+        make.height.mas_equalTo(50);
+    }];
     
     [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)]];
 }

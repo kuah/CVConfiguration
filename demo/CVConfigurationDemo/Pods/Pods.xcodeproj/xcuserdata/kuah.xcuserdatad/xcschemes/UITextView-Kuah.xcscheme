@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'F5888BD92756054467166A9C81106F9A'
+               BlueprintIdentifier = 'F346EF198D18A05C5D33A29B5CD5CC2C'
                BlueprintName = 'UITextView-Kuah'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libUITextView-Kuah.a'>

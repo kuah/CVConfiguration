@@ -1,4 +1,5 @@
 platform:ios, '8.0'
 target 'CVConfigurationDemo' do
-pod 'UITextView-Kuah'
+pod 'UITextView-Kuah','~>0.3'
+pod 'Masonry'
 end
