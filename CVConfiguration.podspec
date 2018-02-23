@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'CVConfiguration'
-  s.version      = '1.7.0'
+  s.version      = '2.0'
   s.summary      = 'UIkit的语法糖,链式写法'
   s.homepage     = 'https://github.com/kuah/CVConfiguration'
   s.author       = "CT4 => 284766710@qq.com"
@@ -11,5 +11,5 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
   s.license = 'MIT'
   s.frameworks = 'UIKit'
-  s.dependency 'UITextView-Kuah', '~> 0.3'
+  s.dependency 'UITextView-Kuah', '~> 0.4'
 end
