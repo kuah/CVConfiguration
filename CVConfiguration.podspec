@@ -11,5 +11,5 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
   s.license = 'MIT'
   s.frameworks = 'UIKit'
-  s.dependency 'UITextView-Kuah', '~> 0.4'
+  s.dependency 'UITextView-Kuah', '~> 0.6'
 end
